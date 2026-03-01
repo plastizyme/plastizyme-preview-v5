@@ -147,9 +147,18 @@
     .hero {
       padding: 34px 0 22px;
       display: grid;
-      grid-template-columns: 1.07fr .93fr;
-      gap: 18px;
+      grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
+      gap: 20px;
       align-items: start;
+    }
+
+    .hero-copy { min-width: 0; }
+
+    .hero-cta {
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 8px;
     }
 
     .chips {
@@ -205,7 +214,7 @@
     .form-inline {
       margin-top: 8px;
       display: grid;
-      grid-template-columns: 1fr 1fr auto;
+      grid-template-columns: minmax(160px,1fr) minmax(180px,1fr) auto;
       gap: 8px;
       align-items: center;
     }
@@ -321,7 +330,14 @@
 
     @media (max-width: 1200px) {
       .container { width: min(var(--max), 94vw); }
-      h1 { font-size: clamp(1.9rem, 3.5vw, 2.9rem); }
+      h1 { font-size: clamp(1.85rem, 3.2vw, 2.7rem); }
+      .hero { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+    }
+
+    @media (max-width: 1040px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-media { order: 2; }
+      .hero-copy { order: 1; }
     }
 
     @media (max-width: 960px) {
@@ -352,7 +368,7 @@
       .nav-links .btn { width: 100%; }
       .nav-links.open { display: flex; }
 
-      .hero p .btn { width: 100%; margin-bottom: 8px; }
+      .hero-cta .btn { width: 100%; }
       .form-inline { grid-template-columns: 1fr; }
       .form-inline .btn,
       .stack-form .btn { width: 100%; }
@@ -394,7 +410,7 @@
 
   <main class="container" id="top">
     <section class="hero">
-      <div>
+      <div class="hero-copy">
         <div class="chips" aria-label="Project badges">
           <span class="chip">Prototype stage</span>
           <span class="chip">Founder-led</span>
@@ -405,10 +421,10 @@
         <h1>Back our DIY plastic-degrading enzyme kit prototype on Kickstarter.</h1>
         <p class="muted">Plastizyme is a founder-led biotech build exploring PETase-based PET breakdown into building blocks like TPA and EG. We’re keeping scope small, transparent, and practical.</p>
         <p class="caption"><strong>Quick start:</strong> 1) Watch founder demo 2) Read what funds are used for 3) Back on Kickstarter.</p>
-        <p>
+        <div class="hero-cta" role="group" aria-label="Primary actions">
           <a class="btn btn-primary" href="https://www.kickstarter.com/projects/plastizyme/help-us-build-a-diy-plastic-degrading-enzyme-kit-prototype" target="_blank" rel="noopener noreferrer">Back on Kickstarter</a>
           <a class="btn btn-secondary" href="#updates">Join email list</a>
-        </p>
+        </div>
         <p class="caption"><a href="#kickstarter">Go to founder demo ↓</a></p>
 
         <form class="form-inline js-update-form" data-source="hero" novalidate>
