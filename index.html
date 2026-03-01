@@ -158,8 +158,15 @@
       display:flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 4px 0 8px;
+      margin: 6px 0 8px;
     }
+
+    .hero-list {
+      margin: 6px 0 10px;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+    .hero-list li { margin-bottom: 4px; }
 
     .chips {
       display: flex;
@@ -396,6 +403,7 @@
 
     @media (max-width: 520px) {
       .mobile-cta-bar { grid-template-columns: 1fr; }
+      .final-actions { gap: 12px; }
       .chips {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -439,8 +447,12 @@
         </div>
 
         <h1>Back our DIY plastic-degrading enzyme kit prototype on Kickstarter.</h1>
-        <p class="muted">Plastizyme is a founder-led biotech build exploring PETase-based PET breakdown into building blocks like TPA and EG. We’re keeping scope small, transparent, and practical.</p>
-        <p class="caption"><strong>Quick start:</strong> 1) Watch founder demo 2) Read what funds are used for 3) Back on Kickstarter.</p>
+        <p class="muted">Plastizyme is a founder-led prototype exploring PETase-based PET breakdown into building blocks like TPA and EG. We’re fundraising publicly to build and test responsibly.</p>
+        <ul class="hero-list" aria-label="Quick start steps">
+          <li>Watch the founder demo.</li>
+          <li>See exactly what backing funds.</li>
+          <li>Back on Kickstarter if you want this prototype built.</li>
+        </ul>
         <div class="hero-cta" role="group" aria-label="Primary actions">
           <a class="btn btn-primary" href="https://www.kickstarter.com/projects/plastizyme/help-us-build-a-diy-plastic-degrading-enzyme-kit-prototype" target="_blank" rel="noopener noreferrer">Back on Kickstarter</a>
           <a class="btn btn-secondary" href="#updates">Join email list</a>
@@ -488,6 +500,11 @@
         <h2>From the founder</h2>
         <p class="muted">I started Plastizyme to test a practical idea in public: make enzyme-based PET recycling concepts easier to prototype, explain, and improve through real feedback.</p>
         <p class="muted">This is intentionally a small, scrappy build. The goal is not polished hype—it’s honest prototype progress and clear milestone updates.</p>
+              <div class="card" style="margin-top:10px;background:var(--surface);box-shadow:none;">
+          <h3>Prototype transparency</h3>
+          <p class="muted" style="margin-bottom:6px;"><strong>Demonstrated:</strong> educational PETase demo context and prototype planning.</p>
+          <p class="muted" style="margin-bottom:0;"><strong>In progress:</strong> standardized repeatable prototype workflow and expanded data reporting.</p>
+        </div>
       </article>
       <article class="card">
         <h2>Build log</h2>
