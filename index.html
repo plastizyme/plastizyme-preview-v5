@@ -243,6 +243,21 @@
     .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 
     .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    #kickstarter { padding: 18px; }
+    #kickstarter h2 { margin-bottom: 10px; }
+    #kickstarter > .muted { margin-bottom: 12px; }
+    #kickstarter .media-grid { margin: 12px 0 14px; }
+    .kickstarter-actions { display:flex; gap:10px; flex-wrap:wrap; }
+
+    .final-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
     .video-wrap {
       position: relative;
       width: 100%;
@@ -368,7 +383,7 @@
       .nav-links .btn { width: 100%; }
       .nav-links.open { display: flex; }
 
-      .hero-cta .btn { width: 100%; }
+      .hero-cta .btn, .kickstarter-actions .btn, .final-actions .btn { width: 100%; }
       .form-inline { grid-template-columns: 1fr; }
       .form-inline .btn,
       .stack-form .btn { width: 100%; }
@@ -457,7 +472,10 @@
           <figcaption class="caption">Prototype kit concept image for campaign storytelling.</figcaption>
         </figure>
       </div>
-      <a class="btn btn-primary" href="https://www.kickstarter.com/projects/plastizyme/help-us-build-a-diy-plastic-degrading-enzyme-kit-prototype" target="_blank" rel="noopener noreferrer">Back on Kickstarter</a>
+      <div class="kickstarter-actions">
+        <a class="btn btn-primary" href="https://www.kickstarter.com/projects/plastizyme/help-us-build-a-diy-plastic-degrading-enzyme-kit-prototype" target="_blank" rel="noopener noreferrer">Back on Kickstarter</a>
+        <a class="btn btn-secondary" href="#funding">See what backing funds</a>
+      </div>
     </section>
 
     <section id="founder" class="grid-2">
@@ -570,10 +588,10 @@
     <section class="final">
       <h2>If you want this prototype built, back us now.</h2>
       <p class="muted">Every pledge helps move this from concept to tested milestone.</p>
-      <p>
+      <div class="final-actions" role="group" aria-label="Final actions">
         <a class="btn btn-primary" href="https://www.kickstarter.com/projects/plastizyme/help-us-build-a-diy-plastic-degrading-enzyme-kit-prototype" target="_blank" rel="noopener noreferrer">Back on Kickstarter</a>
         <a class="btn btn-secondary" href="#updates">Get updates</a>
-      </p>
+      </div>
     </section>
   </main>
 
