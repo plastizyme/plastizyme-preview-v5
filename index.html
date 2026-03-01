@@ -242,7 +242,8 @@
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 
-    .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+    .media-col { display:flex; flex-direction:column; }
 
     #kickstarter { padding: 18px; }
     #kickstarter h2 { margin-bottom: 10px; }
@@ -275,6 +276,8 @@
       height: 100%;
       border: 0;
     }
+
+    .media-image { margin: 0; }
 
     .media-image img {
       width: 100%;
@@ -340,7 +343,8 @@
 
     .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
     .mobile-cta-bar { display:none; position: sticky; bottom: 0; z-index: 90; background: rgba(255,255,255,.95); border-top: 1px solid var(--border); padding: 8px 4vw calc(8px + env(safe-area-inset-bottom)); gap: 8px; }
-    .mobile-cta-bar .btn { width: 100%; }
+    .mobile-cta-bar .btn { width: 100%; justify-content:center; text-align:center; white-space:normal; line-height:1.25; }
+    .final-actions .btn { justify-content:center; text-align:center; white-space:normal; }
 
 
     @media (max-width: 1200px) {
@@ -391,6 +395,7 @@
     }
 
     @media (max-width: 520px) {
+      .mobile-cta-bar { grid-template-columns: 1fr; }
       .chips {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -453,7 +458,7 @@
       </div>
 
       <div class="hero-media card">
-        <img src="https://plastizyme.com/product-image-1.jpg" alt="Plastizyme prototype product image" />
+        <img src="https://plastizyme.com/hero-background.jpg" alt="Plastic waste context hero image" />
       </div>
     </section>
 
@@ -461,13 +466,13 @@
       <h2>Kickstarter first: why we’re fundraising publicly</h2>
       <p class="muted">Backer support directly funds the first prototype materials, enzyme testing consumables, and transparent progress logs.</p>
       <div class="media-grid">
-        <div>
+        <div class="media-col">
           <div class="video-wrap">
             <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/nWfBvRm4640" title="Founder YouTube demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <p class="caption">Founder video context for early PETase demo conditions (educational reference only).</p>
         </div>
-        <figure class="media-image">
+        <figure class="media-image media-col">
           <img src="https://plastizyme.com/product-image-1.jpg" alt="Prototype kit concept image" />
           <figcaption class="caption">Prototype kit concept image for campaign storytelling.</figcaption>
         </figure>
